@@ -6,12 +6,12 @@ const typographyVariants = tv({
   base: "m-0",
   variants: {
     variant: {
-      hero: "text-4xl font-bold text-(--text-primary)",
-      sectionTitle: "text-sm font-bold text-(--text-primary)",
-      body: "text-sm font-normal text-(--text-secondary)",
-      meta: "text-xs font-normal text-(--text-tertiary)",
-      code: "text-[13px] font-normal text-(--accent-amber)",
-      slash: "text-sm font-bold text-(--accent-green)",
+      hero: "text-4xl font-bold text-text-primary",
+      sectionTitle: "text-sm font-bold text-text-primary",
+      body: "text-sm font-normal text-text-secondary",
+      meta: "text-xs font-normal text-text-tertiary",
+      code: "text-[13px] font-normal text-accent-amber",
+      slash: "text-sm font-bold text-accent-green",
     },
   },
   defaultVariants: {

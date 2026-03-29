@@ -5,7 +5,6 @@ import {
   CodeBlock,
   DiffLine,
   LeaderboardRow,
-  Navbar,
   ScoreRing,
   Toggle,
   Typography,
@@ -13,27 +12,27 @@ import {
 
 export default function ShowcasePage() {
   return (
-    <main className="min-h-screen bg-(--bg-page) px-6 py-10 text-(--text-primary)">
+    <main className="min-h-screen bg-bg-page px-6 py-10 text-text-primary">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-10">
-        <header className="flex flex-col gap-2 border-b border-(--border-primary) pb-5">
-          <p className="text-xs text-(--text-secondary)">{"// ui_showcase"}</p>
+        <header className="flex flex-col gap-2 border-b border-border-primary pb-5">
+          <p className="text-xs text-text-secondary">{"// ui_showcase"}</p>
           <h1 className="text-lg font-medium">Reusable Components</h1>
-          <p className="text-sm text-(--text-secondary)">
+          <p className="text-sm text-text-secondary">
             Visual reference for shared UI primitives.
           </p>
         </header>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <div className="flex flex-col gap-1">
             <h2 className="text-sm font-medium">Button</h2>
-            <p className="text-xs text-(--text-secondary)">
+            <p className="text-xs text-text-secondary">
               Variants extracted from the current Pencil design.
             </p>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
-              <p className="text-xs text-(--text-secondary)">Primary</p>
+              <p className="text-xs text-text-secondary">Primary</p>
               <div className="flex flex-wrap items-center gap-4">
                 <Button variant="primary" size="sm">
                   $ roast_my_code
@@ -48,7 +47,7 @@ export default function ShowcasePage() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="text-xs text-(--text-secondary)">Secondary</p>
+              <p className="text-xs text-text-secondary">Secondary</p>
               <div className="flex flex-wrap items-center gap-4">
                 <Button variant="secondary" size="sm">
                   $ share_roast
@@ -63,7 +62,7 @@ export default function ShowcasePage() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="text-xs text-(--text-secondary)">Link</p>
+              <p className="text-xs text-text-secondary">Link</p>
               <div className="flex flex-wrap items-center gap-4">
                 <Button variant="link" size="sm">
                   $ view_all &gt;&gt;
@@ -78,10 +77,10 @@ export default function ShowcasePage() {
             </div>
           </div>
 
-          <div className="h-px w-full bg-(--border-primary)" />
+          <div className="h-px w-full bg-border-primary" />
 
           <div className="flex flex-col gap-3">
-            <p className="text-xs text-(--text-secondary)">States</p>
+            <p className="text-xs text-text-secondary">States</p>
             <div className="flex flex-wrap items-center gap-4">
               <Button variant="primary" disabled>
                 $ disabled
@@ -98,7 +97,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Typography</h2>
           <div className="flex flex-col gap-4">
             <Typography variant="hero">
@@ -114,7 +113,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Toggle</h2>
           <div className="flex flex-wrap items-center gap-8">
             <Toggle checked />
@@ -122,7 +121,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Badges</h2>
           <div className="flex flex-wrap items-center gap-6">
             <Badge variant="critical">critical</Badge>
@@ -132,7 +131,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Cards</h2>
           <AnalysisCard
             badgeLabel="critical"
@@ -142,10 +141,10 @@ export default function ShowcasePage() {
           />
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Code Block</h2>
           <CodeBlock
-            codeLines={[
+            code={[
               "function calculateTotal(items) {",
               "  let total = 0;",
               "  for (let i = 0; i < items.length; i++) {",
@@ -153,11 +152,11 @@ export default function ShowcasePage() {
               "  }",
               "  return total;",
               "}",
-            ]}
+            ].join("\n")}
           />
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Diff Line</h2>
           <div className="flex w-full max-w-[560px] flex-col">
             <DiffLine variant="removed" code="var total = 0;" />
@@ -169,7 +168,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Table Row</h2>
           <div className="w-full">
             <LeaderboardRow
@@ -181,12 +180,7 @@ export default function ShowcasePage() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
-          <h2 className="text-sm font-medium">Navbar</h2>
-          <Navbar />
-        </section>
-
-        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+        <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Score Ring</h2>
           <ScoreRing value={3.5} />
         </section>

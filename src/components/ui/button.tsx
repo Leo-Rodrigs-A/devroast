@@ -3,14 +3,14 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/lib/cn";
 
 const buttonVariants = tv({
-  base: "inline-flex items-center justify-center gap-2 transition-all duration-150 ease-out disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--border-focus) focus-visible:ring-offset-2 focus-visible:ring-offset-(--bg-page) motion-reduce:transform-none motion-reduce:transition-none",
+  base: "inline-flex items-center justify-center gap-2 transition-all duration-150 ease-out disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bg-page motion-reduce:transform-none motion-reduce:transition-none",
   variants: {
     variant: {
       primary:
-        "bg-(--accent-green) font-medium text-(--accent-green-foreground) active:translate-y-px active:scale-[0.98]",
+        "bg-accent-green font-medium text-accent-green-foreground active:translate-y-px active:scale-[0.98]",
       secondary:
-        "border border-(--border-primary) font-normal text-(--text-primary) active:bg-(--bg-elevated)",
-      link: "border border-(--border-primary) font-normal text-(--text-secondary) active:translate-x-0.5",
+        "border border-border-primary font-normal text-text-primary active:bg-bg-elevated",
+      link: "border border-border-primary font-normal text-text-secondary active:translate-x-0.5",
     },
     size: {
       sm: "text-xs",

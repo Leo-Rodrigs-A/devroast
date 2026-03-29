@@ -1,22 +1,16 @@
-import type { ComponentProps } from "react";
-import { tv } from "tailwind-variants";
+"use client";
+
+import { Switch } from "@base-ui/react/switch";
 import { cn } from "@/lib/cn";
 
-const trackVariants = tv({
-  base: "flex h-[22px] w-10 items-center rounded-full p-[3px] transition-colors",
-  variants: {
-    checked: {
-      true: "justify-end bg-(--accent-green)",
-      false: "justify-start bg-(--border-primary)",
-    },
-  },
-});
-
-export interface ToggleProps
-  extends Omit<ComponentProps<"button">, "onChange"> {
+export interface ToggleProps {
   checked: boolean;
   onCheckedChange?: (checked: boolean) => void;
   label?: string;
+  className?: string;
+  disabled?: boolean;
+  id?: string;
+  name?: string;
 }
 
 export function Toggle({
@@ -24,32 +18,37 @@ export function Toggle({
   onCheckedChange,
   label = "roast mode",
   className,
-  onClick,
-  ...props
+  disabled,
+  id,
+  name,
 }: ToggleProps) {
   return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={checked}
-      className={cn("inline-flex items-center gap-3", className)}
-      onClick={(event) => {
-        onClick?.(event);
-        onCheckedChange?.(!checked);
-      }}
-      {...props}
-    >
-      <span className={trackVariants({ checked })}>
-        <span className="size-4 rounded-full bg-(--text-primary)" />
-      </span>
+    <div className={cn("inline-flex items-center gap-3", className)}>
+      <Switch.Root
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+        disabled={disabled}
+        id={id}
+        name={name}
+        nativeButton
+        render={<button type="button" />}
+        className={cn(
+          "flex h-[22px] w-10 items-center rounded-full p-[3px] transition-colors",
+          checked
+            ? "justify-end bg-accent-green"
+            : "justify-start bg-border-primary",
+        )}
+      >
+        <Switch.Thumb className="size-4 rounded-full bg-text-primary" />
+      </Switch.Root>
       <span
         className={cn(
           "text-xs",
-          checked ? "text-(--accent-green)" : "text-(--text-secondary)",
+          checked ? "text-accent-green" : "text-text-secondary",
         )}
       >
         {label}
       </span>
-    </button>
+    </div>
   );
 }

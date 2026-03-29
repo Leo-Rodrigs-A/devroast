@@ -15,11 +15,12 @@
 - Keep component APIs minimal and predictable.
 - Use `tailwind-variants` to define variants and `VariantProps` typing.
 - Use `tailwind-merge` (via `cn`) for safe class overrides.
+- For interactive/headless behaviors, prefer Base UI primitives.
+- For syntax highlighting, use `shiki` in server components.
 
 ## Styling rules
-- Use global theme tokens (`var(--...)`) instead of hardcoded values whenever a token exists.
-- In Tailwind v4, prefer token utilities using `utility-(--token)` syntax over bracket `var(...)` syntax.
-- Do not use explicit type hints like `color:` for token utilities; prefer direct token usage (e.g. `text-(--text-primary)`).
+- Use Tailwind theme tokens directly in classes (e.g. `bg-accent-green`, `text-text-primary`, `border-border-primary`).
+- Avoid CSS-variable arbitrary-value utilities for colors in class names.
 - Keep typography consistent with project standard (JetBrains Mono).
 - Preserve spacing and sizing from Pencil as closely as possible.
 

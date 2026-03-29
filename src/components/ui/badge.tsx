@@ -6,10 +6,10 @@ const badgeVariants = tv({
   base: "inline-flex items-center gap-2 text-xs",
   variants: {
     variant: {
-      critical: "text-(--accent-red)",
-      warning: "text-(--accent-amber)",
-      good: "text-(--accent-green)",
-      muted: "text-(--text-secondary)",
+      critical: "text-accent-red",
+      warning: "text-accent-amber",
+      good: "text-accent-green",
+      muted: "text-text-secondary",
     },
   },
   defaultVariants: {

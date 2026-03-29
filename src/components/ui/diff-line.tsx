@@ -6,9 +6,9 @@ const diffVariants = tv({
   base: "flex w-full items-center gap-2 px-4 py-2 text-[13px]",
   variants: {
     variant: {
-      added: "bg-[#0A1A0F] text-(--text-primary)",
-      removed: "bg-[#1A0A0A] text-(--text-secondary)",
-      context: "text-(--text-secondary)",
+      added: "bg-diff-added text-text-primary",
+      removed: "bg-diff-removed text-text-secondary",
+      context: "text-text-secondary",
     },
   },
   defaultVariants: {

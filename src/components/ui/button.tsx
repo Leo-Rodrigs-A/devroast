@@ -7,10 +7,10 @@ const buttonVariants = tv({
   variants: {
     variant: {
       primary:
-        "bg-(--accent-green) px-6 py-2.5 text-[13px] text-(color:--accent-green-foreground)",
+        "bg-(--accent-green) px-6 py-2.5 text-[13px] text-(--accent-green-foreground)",
       secondary:
-        "border border-(--border-primary) px-4 py-2 text-xs font-normal text-(color:--text-primary)",
-      link: "border border-(--border-primary) px-3 py-1.5 text-xs font-normal text-(color:--text-secondary)",
+        "border border-(--border-primary) px-4 py-2 text-xs font-normal text-(--text-primary)",
+      link: "border border-(--border-primary) px-3 py-1.5 text-xs font-normal text-(--text-secondary)",
     },
     fullWidth: { true: "w-full" },
     loading: { true: "cursor-wait" },

@@ -33,13 +33,13 @@ export function Toggle({
         nativeButton
         render={<button type="button" />}
         className={cn(
-          "flex h-[22px] w-10 items-center rounded-full p-[3px] transition-colors",
+          "flex h-[22px] w-10 items-center rounded-full p-[3px] transition-all duration-200 ease-out",
           checked
             ? "justify-end bg-accent-green"
             : "justify-start bg-border-primary",
         )}
       >
-        <Switch.Thumb className="size-4 rounded-full bg-text-primary" />
+        <Switch.Thumb className="size-4 rounded-full bg-text-primary transition-transform duration-200 ease-out" />
       </Switch.Root>
       <span
         className={cn(

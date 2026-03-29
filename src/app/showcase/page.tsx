@@ -160,7 +160,7 @@ export default function ShowcasePage() {
 
         <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Diff Line</h2>
-          <div className="flex w-full max-w-[560px] flex-col">
+          <div className="flex w-full max-w-140 flex-col">
             <DiffLine variant="removed" code="var total = 0;" />
             <DiffLine variant="added" code="const total = 0;" />
             <DiffLine

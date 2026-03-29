@@ -1,16 +1,16 @@
-import * as React from "react";
+import { type ComponentProps, forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import { cn } from "@/lib/cn";
 
 const buttonVariants = tv({
-  base: "inline-flex items-center justify-center gap-2 font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border-focus)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]",
+  base: "inline-flex items-center justify-center gap-2 font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--border-focus) focus-visible:ring-offset-2 focus-visible:ring-offset-(--bg-page)",
   variants: {
     variant: {
       primary:
-        "bg-[var(--accent-green)] px-6 py-2.5 text-[13px] text-[var(--accent-green-foreground)]",
+        "bg-(--accent-green) px-6 py-2.5 text-[13px] text-(color:--accent-green-foreground)",
       secondary:
-        "border border-[var(--border-primary)] px-4 py-2 text-xs font-normal text-[var(--text-primary)]",
-      link: "border border-[var(--border-primary)] px-3 py-1.5 text-xs font-normal text-[var(--text-secondary)]",
+        "border border-(--border-primary) px-4 py-2 text-xs font-normal text-(color:--text-primary)",
+      link: "border border-(--border-primary) px-3 py-1.5 text-xs font-normal text-(color:--text-secondary)",
     },
     fullWidth: { true: "w-full" },
     loading: { true: "cursor-wait" },
@@ -29,10 +29,10 @@ const buttonVariants = tv({
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ComponentProps<"button">,
     VariantProps<typeof buttonVariants> {}
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,

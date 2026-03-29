@@ -1,9 +1,9 @@
 import { ToggleInteractiveDemo } from "@/app/showcase/toggle-interactive-demo";
+import { CodeBlock } from "@/components/code-block";
 import {
   AnalysisCard,
   Badge,
   Button,
-  CodeBlock,
   DiffLine,
   LeaderboardRow,
   ScoreRing,

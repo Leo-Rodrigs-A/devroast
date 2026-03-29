@@ -1,5 +1,7 @@
-import { HomeNavbar } from "@/app/_components/home-navbar";
-import { Button, CodeBlock, LeaderboardRow, Toggle } from "@/components/ui";
+import { CodeBlock } from "@/components/code-block";
+import { HomeNavbar } from "@/components/home-navbar";
+import { HomeRoastToggle } from "@/components/home-roast-toggle";
+import { Button, LeaderboardRow } from "@/components/ui";
 
 const sampleCode = [
   "function calculateTotal(items) {",
@@ -38,11 +40,11 @@ export default function Home() {
           </p>
         </section>
 
-        <CodeBlock code={sampleCode} />
+        <CodeBlock className="max-w-195" code={sampleCode} />
 
-        <section className="flex w-full max-w-140 items-center justify-between">
+        <section className="flex w-full max-w-195 items-center justify-between">
           <div className="flex items-center gap-4">
-            <Toggle checked label="roast mode" />
+            <HomeRoastToggle />
             <p className="text-xs text-text-tertiary">
               {"// maximum sarcasm enabled"}
             </p>
@@ -56,9 +58,9 @@ export default function Home() {
           <p>avg score: 4.2/10</p>
         </section>
 
-        <section className="h-[60px]" />
+        <section className="h-15" />
 
-        <section className="flex w-full flex-col gap-6 pb-16">
+        <section className="flex w-full max-w-240 flex-col gap-6 pb-16">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-sm font-bold text-accent-green">
@@ -74,16 +76,16 @@ export default function Home() {
             </Button>
           </div>
 
-          <p className="text-[13px] text-text-tertiary">
+          <p className="text-sm text-text-tertiary">
             {"// the worst code on the internet, ranked by shame"}
           </p>
 
           <div className="w-full border border-border-primary bg-bg-surface">
             <div className="flex items-center gap-6 border-b border-border-primary bg-bg-elevated px-5 py-3 text-xs text-text-tertiary">
-              <span className="w-[50px]">rank</span>
-              <span className="w-[70px]">score</span>
+              <span className="w-12">rank</span>
+              <span className="w-16">score</span>
               <span className="flex-1">code</span>
-              <span className="w-[100px]">lang</span>
+              <span className="w-24">lang</span>
             </div>
 
             <LeaderboardRow

@@ -1,4 +1,15 @@
-import { Button } from "@/components/ui/button";
+import {
+  AnalysisCard,
+  Badge,
+  Button,
+  CodeBlock,
+  DiffLine,
+  LeaderboardRow,
+  Navbar,
+  ScoreRing,
+  Toggle,
+  Typography,
+} from "@/components/ui";
 
 export default function ShowcasePage() {
   return (
@@ -85,6 +96,99 @@ export default function ShowcasePage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Typography</h2>
+          <div className="flex flex-col gap-4">
+            <Typography variant="hero">
+              paste your code. get roasted.
+            </Typography>
+            <div className="flex items-center gap-2">
+              <Typography variant="slash">{"//"}</Typography>
+              <Typography variant="sectionTitle">detailed_analysis</Typography>
+            </div>
+            <Typography variant="body">description text sample</Typography>
+            <Typography variant="meta">lang: javascript · 7 lines</Typography>
+            <Typography variant="code">function calculateTotal()</Typography>
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Toggle</h2>
+          <div className="flex flex-wrap items-center gap-8">
+            <Toggle checked />
+            <Toggle checked={false} />
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Badges</h2>
+          <div className="flex flex-wrap items-center gap-6">
+            <Badge variant="critical">critical</Badge>
+            <Badge variant="warning">warning</Badge>
+            <Badge variant="good">good</Badge>
+            <Badge variant="critical">needs_serious_help</Badge>
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Cards</h2>
+          <AnalysisCard
+            badgeLabel="critical"
+            badgeVariant="critical"
+            title="using var instead of const/let"
+            description="the var keyword is function-scoped rather than block-scoped, which can lead to unexpected behavior and bugs. modern javascript uses const for immutable bindings and let for mutable ones."
+          />
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Code Block</h2>
+          <CodeBlock
+            codeLines={[
+              "function calculateTotal(items) {",
+              "  let total = 0;",
+              "  for (let i = 0; i < items.length; i++) {",
+              "    total += items[i];",
+              "  }",
+              "  return total;",
+              "}",
+            ]}
+          />
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Diff Line</h2>
+          <div className="flex w-full max-w-[560px] flex-col">
+            <DiffLine variant="removed" code="var total = 0;" />
+            <DiffLine variant="added" code="const total = 0;" />
+            <DiffLine
+              variant="context"
+              code="for (let i = 0; i < items.length; i++) {"
+            />
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Table Row</h2>
+          <div className="w-full">
+            <LeaderboardRow
+              rank="#1"
+              score="2.1"
+              codePreview="function calculateTotal(items) { var total = 0; ..."
+              language="javascript"
+            />
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Navbar</h2>
+          <Navbar />
+        </section>
+
+        <section className="flex flex-col gap-4 rounded-(--radius-m) border border-(--border-primary) bg-(--bg-surface) p-6">
+          <h2 className="text-sm font-medium">Score Ring</h2>
+          <ScoreRing value={3.5} />
         </section>
       </div>
     </main>

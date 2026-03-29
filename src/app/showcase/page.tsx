@@ -20,10 +20,51 @@ export default function ShowcasePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <Button variant="primary">$ roast_my_code</Button>
-            <Button variant="secondary">$ share_roast</Button>
-            <Button variant="link">$ view_all &gt;&gt;</Button>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              <p className="text-xs text-(--text-secondary)">Primary</p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button variant="primary" size="sm">
+                  $ roast_my_code
+                </Button>
+                <Button variant="primary" size="md">
+                  $ roast_my_code
+                </Button>
+                <Button variant="primary" size="lg">
+                  $ roast_my_code
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <p className="text-xs text-(--text-secondary)">Secondary</p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button variant="secondary" size="sm">
+                  $ share_roast
+                </Button>
+                <Button variant="secondary" size="md">
+                  $ share_roast
+                </Button>
+                <Button variant="secondary" size="lg">
+                  $ share_roast
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <p className="text-xs text-(--text-secondary)">Link</p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button variant="link" size="sm">
+                  $ view_all &gt;&gt;
+                </Button>
+                <Button variant="link" size="md">
+                  $ view_all &gt;&gt;
+                </Button>
+                <Button variant="link" size="lg">
+                  $ view_all &gt;&gt;
+                </Button>
+              </div>
+            </div>
           </div>
 
           <div className="h-px w-full bg-(--border-primary)" />

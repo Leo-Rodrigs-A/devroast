@@ -1,3 +1,4 @@
+import { ToggleInteractiveDemo } from "@/app/showcase/toggle-interactive-demo";
 import {
   AnalysisCard,
   Badge,
@@ -118,6 +119,7 @@ export default function ShowcasePage() {
           <div className="flex flex-wrap items-center gap-8">
             <Toggle checked />
             <Toggle checked={false} />
+            <ToggleInteractiveDemo />
           </div>
         </section>
 
@@ -182,7 +184,11 @@ export default function ShowcasePage() {
 
         <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Score Ring</h2>
-          <ScoreRing value={3.5} />
+          <div className="flex flex-wrap items-center gap-8">
+            <ScoreRing value={3.5} />
+            <ScoreRing value={7.8} />
+            <ScoreRing value={1.9} />
+          </div>
         </section>
       </div>
     </main>

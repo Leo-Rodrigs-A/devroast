@@ -30,7 +30,7 @@ export async function CodeBlock({
   return (
     <section
       className={cn(
-        "w-full max-w-140 border border-border-primary bg-bg-elevated",
+        "mx-auto w-full max-w-140 border border-border-primary bg-bg-elevated",
         className,
       )}
     >

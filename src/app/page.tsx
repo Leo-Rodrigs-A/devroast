@@ -1,5 +1,4 @@
 import { CodeBlock } from "@/components/code-block";
-import { HomeNavbar } from "@/components/home-navbar";
 import { HomeRoastToggle } from "@/components/home-roast-toggle";
 import { Button, LeaderboardRow } from "@/components/ui";
 
@@ -23,8 +22,6 @@ const sampleCode = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-bg-page text-text-primary">
-      <HomeNavbar />
-
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-10 pt-20">
         <section className="flex flex-col gap-3">
           <div className="flex items-center gap-3">

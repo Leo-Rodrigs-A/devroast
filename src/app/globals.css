@@ -61,3 +61,50 @@ body {
 * {
   border-color: var(--color-border-primary);
 }
+
+.codeblock-shiki pre {
+  margin: 0;
+  background: transparent;
+  padding: 16px;
+  white-space: pre;
+  width: max-content;
+  min-width: 100%;
+}
+
+.codeblock-shiki code {
+  counter-reset: line;
+  display: block;
+  padding-left: 40px;
+  position: relative;
+}
+
+.codeblock-shiki .line {
+  line-height: 6px;
+  min-height: 6px;
+  display: block;
+  counter-increment: line;
+  position: relative;
+}
+
+.codeblock-shiki .line:empty::after {
+  content: " ";
+}
+
+.codeblock-shiki code::after {
+  background: var(--color-border-primary);
+  bottom: 0;
+  content: "";
+  left: 28px;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.codeblock-shiki .line::before {
+  color: var(--color-text-tertiary);
+  content: counter(line);
+  left: -40px;
+  position: absolute;
+  text-align: right;
+  width: 24px;
+}

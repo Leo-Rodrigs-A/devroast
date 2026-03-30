@@ -1,11 +1,18 @@
 import { ToggleInteractiveDemo } from "@/app/showcase/toggle-interactive-demo";
 import { CodeBlock } from "@/components/code-block";
 import {
-  AnalysisCard,
   Badge,
   Button,
+  CardDescription,
+  CardHeader,
+  CardRoot,
+  CardTitle,
   DiffLine,
-  LeaderboardRow,
+  LeaderboardRowCode,
+  LeaderboardRowLanguage,
+  LeaderboardRowRank,
+  LeaderboardRowRoot,
+  LeaderboardRowScore,
   ScoreRing,
   Toggle,
   Typography,
@@ -135,12 +142,17 @@ export default function ShowcasePage() {
 
         <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Cards</h2>
-          <AnalysisCard
-            badgeLabel="critical"
-            badgeVariant="critical"
-            title="using var instead of const/let"
-            description="the var keyword is function-scoped rather than block-scoped, which can lead to unexpected behavior and bugs. modern javascript uses const for immutable bindings and let for mutable ones."
-          />
+          <CardRoot>
+            <CardHeader>
+              <Badge variant="critical">critical</Badge>
+            </CardHeader>
+            <CardTitle>using var instead of const/let</CardTitle>
+            <CardDescription>
+              the var keyword is function-scoped rather than block-scoped, which
+              can lead to unexpected behavior and bugs. modern javascript uses
+              const for immutable bindings and let for mutable ones.
+            </CardDescription>
+          </CardRoot>
         </section>
 
         <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
@@ -173,12 +185,14 @@ export default function ShowcasePage() {
         <section className="flex flex-col gap-4 rounded-m border border-border-primary bg-bg-surface p-6">
           <h2 className="text-sm font-medium">Table Row</h2>
           <div className="w-full">
-            <LeaderboardRow
-              rank="#1"
-              score="2.1"
-              codePreview="function calculateTotal(items) { var total = 0; ..."
-              language="javascript"
-            />
+            <LeaderboardRowRoot>
+              <LeaderboardRowRank>#1</LeaderboardRowRank>
+              <LeaderboardRowScore>2.1</LeaderboardRowScore>
+              <LeaderboardRowCode>
+                {"function calculateTotal(items) { var total = 0; ..."}
+              </LeaderboardRowCode>
+              <LeaderboardRowLanguage>javascript</LeaderboardRowLanguage>
+            </LeaderboardRowRoot>
           </div>
         </section>
 

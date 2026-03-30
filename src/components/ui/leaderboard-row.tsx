@@ -1,21 +1,10 @@
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
 
-export interface LeaderboardRowProps extends ComponentProps<"div"> {
-  rank: string;
-  score: string;
-  codePreview: string;
-  language: string;
-}
-
-export function LeaderboardRow({
+export function LeaderboardRowRoot({
   className,
-  rank,
-  score,
-  codePreview,
-  language,
   ...props
-}: LeaderboardRowProps) {
+}: ComponentProps<"div">) {
   return (
     <div
       className={cn(
@@ -23,13 +12,54 @@ export function LeaderboardRow({
         className,
       )}
       {...props}
-    >
-      <div className="w-10 text-[13px] text-text-tertiary">{rank}</div>
-      <div className="w-[60px] text-[13px] font-bold text-accent-red">
-        {score}
-      </div>
-      <div className="flex-1 text-xs text-text-secondary">{codePreview}</div>
-      <div className="w-[100px] text-xs text-text-tertiary">{language}</div>
-    </div>
+    />
+  );
+}
+
+export function LeaderboardRowRank({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("w-10 text-sm text-text-tertiary", className)}
+      {...props}
+    />
+  );
+}
+
+export function LeaderboardRowScore({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("w-16 text-sm font-bold text-accent-red", className)}
+      {...props}
+    />
+  );
+}
+
+export function LeaderboardRowCode({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("flex-1 text-xs text-text-secondary", className)}
+      {...props}
+    />
+  );
+}
+
+export function LeaderboardRowLanguage({
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div
+      className={cn("w-24 text-xs text-text-tertiary", className)}
+      {...props}
+    />
   );
 }

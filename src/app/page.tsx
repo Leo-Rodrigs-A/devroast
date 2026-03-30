@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { HomeEditorSection } from "@/components/home-editor-section";
-import { buttonVariants, LeaderboardRow } from "@/components/ui";
+import {
+  buttonVariants,
+  LeaderboardRowCode,
+  LeaderboardRowLanguage,
+  LeaderboardRowRank,
+  LeaderboardRowRoot,
+  LeaderboardRowScore,
+} from "@/components/ui";
 
 export default function Home() {
   return (
@@ -61,24 +68,30 @@ export default function Home() {
               <span className="w-24">lang</span>
             </div>
 
-            <LeaderboardRow
-              codePreview="function calculateTotal(items) { var total = 0; ..."
-              language="javascript"
-              rank="#1"
-              score="2.1"
-            />
-            <LeaderboardRow
-              codePreview="for (i = 0; i <= arr.length; i++) { console.log(arr[i]) }"
-              language="javascript"
-              rank="#2"
-              score="2.8"
-            />
-            <LeaderboardRow
-              codePreview="if (user = null) return false; else return true;"
-              language="typescript"
-              rank="#3"
-              score="3.4"
-            />
+            <LeaderboardRowRoot>
+              <LeaderboardRowRank>#1</LeaderboardRowRank>
+              <LeaderboardRowScore>2.1</LeaderboardRowScore>
+              <LeaderboardRowCode>
+                {"function calculateTotal(items) { var total = 0; ..."}
+              </LeaderboardRowCode>
+              <LeaderboardRowLanguage>javascript</LeaderboardRowLanguage>
+            </LeaderboardRowRoot>
+            <LeaderboardRowRoot>
+              <LeaderboardRowRank>#2</LeaderboardRowRank>
+              <LeaderboardRowScore>2.8</LeaderboardRowScore>
+              <LeaderboardRowCode>
+                {"for (i = 0; i <= arr.length; i++) { console.log(arr[i]) }"}
+              </LeaderboardRowCode>
+              <LeaderboardRowLanguage>javascript</LeaderboardRowLanguage>
+            </LeaderboardRowRoot>
+            <LeaderboardRowRoot>
+              <LeaderboardRowRank>#3</LeaderboardRowRank>
+              <LeaderboardRowScore>3.4</LeaderboardRowScore>
+              <LeaderboardRowCode>
+                if (user = null) return false; else return true;
+              </LeaderboardRowCode>
+              <LeaderboardRowLanguage>typescript</LeaderboardRowLanguage>
+            </LeaderboardRowRoot>
           </div>
 
           <p className="text-center text-xs text-text-tertiary">

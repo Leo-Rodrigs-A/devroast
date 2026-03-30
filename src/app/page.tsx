@@ -1,23 +1,6 @@
-import { CodeBlock } from "@/components/code-block";
-import { HomeRoastToggle } from "@/components/home-roast-toggle";
-import { Button, LeaderboardRow } from "@/components/ui";
-
-const sampleCode = [
-  "function calculateTotal(items) {",
-  "  let total = 0;",
-  "",
-  "  for (var i = 0; i < items.length; i++) {",
-  "    if (items[i].price) {",
-  "      total += items[i].price * items[i].quantity;",
-  "    }",
-  "  }",
-  "",
-  "  // TODO: handle tax calculation",
-  "  // TODO: handle currency conversion",
-  "",
-  "  return total;",
-  "}",
-].join("\n");
+import Link from "next/link";
+import { HomeEditorSection } from "@/components/home-editor-section";
+import { buttonVariants, LeaderboardRow } from "@/components/ui";
 
 export default function Home() {
   return (
@@ -37,17 +20,7 @@ export default function Home() {
           </p>
         </section>
 
-        <CodeBlock className="max-w-195" code={sampleCode} />
-
-        <section className="flex w-full max-w-195 items-center justify-between">
-          <div className="flex items-center gap-4">
-            <HomeRoastToggle />
-            <p className="text-xs text-text-tertiary">
-              {"// maximum sarcasm enabled"}
-            </p>
-          </div>
-          <Button variant="primary">$ roast_my_code</Button>
-        </section>
+        <HomeEditorSection />
 
         <section className="flex items-center justify-center gap-6 text-xs text-text-tertiary">
           <p>2,847 codes roasted</p>
@@ -68,9 +41,12 @@ export default function Home() {
               </h2>
             </div>
 
-            <Button size="md" variant="link">
+            <Link
+              className={buttonVariants({ size: "md", variant: "link" })}
+              href="/leaderboard"
+            >
               $ view_all &gt;&gt;
-            </Button>
+            </Link>
           </div>
 
           <p className="text-sm text-text-tertiary">
@@ -106,7 +82,13 @@ export default function Home() {
           </div>
 
           <p className="text-center text-xs text-text-tertiary">
-            showing top 3 of 2,847 - view full leaderboard &gt;&gt;
+            showing top 3 of 2,847 -{" "}
+            <Link
+              className="underline-offset-4 transition-colors hover:text-text-secondary hover:underline"
+              href="/leaderboard"
+            >
+              view full leaderboard &gt;&gt;
+            </Link>
           </p>
         </section>
       </div>
